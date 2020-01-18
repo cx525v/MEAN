@@ -1,3 +1,6 @@
 npm init -y
 npm install express mongoose
 npm install -g nodemon
+
+
+nodenom app.js
