@@ -1,0 +1,36 @@
+###aws lightsail
+
+//apache config
+ssh -i default.pem bitnami@51.218.100.38
+
+vi /opt/bitnami/apache2/conf/httpd.conf
+vi /opt/bitnami/apache2/conf/bitnami/bitnami.conf
+
+restart apache
+firewall
+
+
+//mongodb
+
+cat bitnami_application_password
+
+mongo admin --username root -p
+
+
+ssh -N -L 8888:127.0.0.1:8080 -i default.pem.bitnami@54.218.100.38
+
+http://127.0.0.1:8888/rockmongo
+
+
+https://github.com/mikegcoleman/todo
+npm install --production
+
+vi .env
+PORT=80
+DB_URL=mongodb://
+
+//start app
+/todo 
+sudo node ./bin/www
+
+###Heroku
