@@ -24,14 +24,21 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-//static files
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/api', route);
 
+//static files
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) =>{
+     res.sendFile(__dirname, 'public', 'index.html');
+});
+/*
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
      // res.send('foobar');
      res.sendFile('./public/index.html', {root: __dirname});
 });
+*/
 app.listen(port, () => {
     console.log('server connected');
 })
