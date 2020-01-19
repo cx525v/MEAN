@@ -29,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', route);
 
 app.get('/', (req, res) => {
-      res.send('foobar');
+     // res.send('foobar');
+     res.sendFile('./public/index.html', {root: __dirname});
 });
 app.listen(port, () => {
     console.log('server connected');
